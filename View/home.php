@@ -4,7 +4,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhipwallpaper.com%2Fstar-wars-backgrounds%2F&psig=AOvVaw3f9xZY-qLUBdsAk7dXqnq3&ust=1622124153843000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOD_xcTB5_ACFQAAAAAdAAAAABAE">
+    <!-- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhipwallpaper.com%2Fstar-wars-backgrounds%2F&psig=AOvVaw3f9xZY-qLUBdsAk7dXqnq3&ust=1622124153843000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOD_xcTB5_ACFQAAAAAdAAAAABAE"> -->
     <form method="get">
         <label>
             <select name="category">
