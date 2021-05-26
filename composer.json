@@ -1,0 +1,16 @@
+{
+    "name": "juclegre/star-wars-api-project",
+    "require": {
+        "composer/composer": "^2.0",
+      "ext-curl": "*",
+      "ext-json": "*"
+    },
+    "authors": [],
+    "autoload": {
+        "classmap": ["Classes/"],
+        "files": ["Controller/Controller.php", "Manager/Manager.php", "Config/config.php"]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
+    }
+}
