@@ -8,7 +8,7 @@
     "authors": [],
     "autoload": {
         "classmap": ["Classes/"],
-        "files": ["Controller/Controller.php", "Manager/Manager.php", "Config/config.php"]
+        "files": ["Controller/Controller.php", "Manager/Manager.php"]
     },
     "require-dev": {
         "symfony/var-dumper": "^5.2"
