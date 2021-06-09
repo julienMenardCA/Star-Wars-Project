@@ -19,6 +19,8 @@ class Controller
 
             $result = $manager->getAPI($category, $currentPage);
 
+            $factory = new Factory($result);
+
             foreach($result['results'] as $item){
                 $urls[] = $item['url'];
             }

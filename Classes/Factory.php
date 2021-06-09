@@ -1,6 +1,5 @@
 <?php
 
-
 class Factory
 {
 
@@ -9,13 +8,26 @@ class Factory
      */
     public function __construct($data)
     {
-        $film = array_merge($API_Info, $Film);
-        $common = array_merge($API_Info, $Common);
-        $people = array_merge($common, $People);
-        $vehicle = array_merge($common, $Vehicle);
-        $planet = array_merge($common, $Planet);
-        $species = array_merge($common, $Species);
-        $starship = array_merge($vehicle, $Starship);
-        dump($film);
+        $Config = include("Config/config.php");
+
+        dump($data["results"][0]);
+        dump($Config);
+
+        $type = [];
+
+        for ($i = 0; $i < sizeof($Config); $i++)
+        {
+            $tempArrayKeys = array_keys($Config);
+            for ($j = 0; $j < sizeof($Config[$tempArrayKeys[$i]]); $j++)
+            {
+                if (array_key_exists($Config[$tempArrayKeys[$i]][$j], $data["results"][0]))
+                {
+                    $type[] = $tempArrayKeys[$i];
+                    // TODO verif avec nombre d'elems vrai
+                }
+            }
+        }
+
+        dump($type);
     }
 }
