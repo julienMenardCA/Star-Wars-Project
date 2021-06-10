@@ -10,7 +10,7 @@ return array(
         'height', 'mass', 'skin_color', 'homeworld', 'species',
         'starships', 'vehicles'),
     'Planet' => array('diameter', 'rotation_period', 'orbital_period', 'gravity',
-        'population', 'climate', 'terrain', 'surface_water', 'resident'),
+        'population', 'climate', 'terrain', 'surface_water', 'residents'),
     'Species' => array('classification', 'designation', 'average_height', 'average_lifespan',
         'eye_colors', 'hair_colors', 'skin_colors', 'language', 'homeworld', 'people'),
     'Vehicles' => array('model','manufacturer','cost_in_credits','length','max_atmosphering_speed','crew',
