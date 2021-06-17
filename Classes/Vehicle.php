@@ -13,6 +13,7 @@ class Vehicle extends Common
     protected $cargoCapacity;
     protected $consumables;
     protected $pilots;
+    protected $length;
 
     /**
      * Vehicle constructor.
@@ -33,6 +34,7 @@ class Vehicle extends Common
         $this->cargoCapacity = $data["cargo_capacity"];
         $this->consumables = $data["consumables"];
         $this->pilots = $data["pilots"];
+        $this->length = $data["length"];
         parent::__construct($data);
     }
 
@@ -114,5 +116,13 @@ class Vehicle extends Common
     public function get_pilots()
     {
         return $this->pilots;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function get_length()
+    {
+        return $this->length;
     }
 }

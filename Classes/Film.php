@@ -54,7 +54,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function get_opening()
+    public function get_opening_crawl()
     {
         return $this->opening;
     }

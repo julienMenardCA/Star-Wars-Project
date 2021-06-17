@@ -4,6 +4,8 @@
     <title>Item</title>
 </head>
 
+<a href="index.php/page=home?category=<?= $category ?>&choice=Rechercher">RETOUR</a>
+<br><br>
 <div class="infos">
     <div>
         <?php
@@ -25,5 +27,3 @@
         ?>
     </div>
 </div>
-<br>
-<a href="index.php/page=home?category=<?= $category ?>&choice=Rechercher">RETOUR</a>
