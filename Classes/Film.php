@@ -16,39 +16,29 @@ class Film extends API_Info
 
     /**
      * Film constructor.
-     * @param $title
-     * @param $episodeId
-     * @param $opening
-     * @param $director
-     * @param $producer
-     * @param $releaseDate
-     * @param $species
-     * @param $starships
-     * @param $vehicles
-     * @param $characters
-     * @param $planets
+     * @param $data
      */
-    public function __construct($title, $episodeId, $opening, $director, $producer, $releaseDate, $species, $starships, $vehicles, $characters, $planets, $url, $created, $edited)
+    public function __construct($data)
     {
-        $this->title = $title;
-        $this->episodeId = $episodeId;
-        $this->opening = $opening;
-        $this->director = $director;
-        $this->producer = $producer;
-        $this->releaseDate = $releaseDate;
-        $this->species = $species;
-        $this->starships = $starships;
-        $this->vehicles = $vehicles;
-        $this->characters = $characters;
-        $this->planets = $planets;
-        parent::__construct($url, $created, $edited);
+        $this->title = $data["title"];
+        $this->episodeId = $data["episode_id"];
+        $this->opening = $data["opening_crawl"];
+        $this->director = $data["director"];
+        $this->producer = $data["producer"];
+        $this->releaseDate = $data["release_date"];
+        $this->species = $data["species"];
+        $this->starships = $data["starships"];
+        $this->vehicles = $data["vehicles"];
+        $this->characters = $data["characters"];
+        $this->planets = $data["planets"];
+        parent::__construct($data);
     }
 
 
     /**
      * @return mixed
      */
-    public function getTitle()
+    public function get_title()
     {
         return $this->title;
     }
@@ -56,7 +46,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getEpisodeId()
+    public function get_episode_id()
     {
         return $this->episodeId;
     }
@@ -64,7 +54,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getOpening()
+    public function get_opening()
     {
         return $this->opening;
     }
@@ -72,7 +62,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getDirector()
+    public function get_director()
     {
         return $this->director;
     }
@@ -80,7 +70,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getProducer()
+    public function get_producer()
     {
         return $this->producer;
     }
@@ -88,7 +78,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getReleaseDate()
+    public function get_release_date()
     {
         return $this->releaseDate;
     }
@@ -96,31 +86,7 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getSpecies()
-    {
-        return $this->species;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStarships()
-    {
-        return $this->starships;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVehicles()
-    {
-        return $this->vehicles;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCharacters()
+    public function get_characters()
     {
         return $this->characters;
     }
@@ -128,8 +94,32 @@ class Film extends API_Info
     /**
      * @return mixed
      */
-    public function getPlanets()
+    public function get_planets()
     {
         return $this->planets;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function get_starships()
+    {
+        return $this->starships;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function get_vehicles()
+    {
+        return $this->vehicles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function get_species()
+    {
+        return $this->species;
     }
 }

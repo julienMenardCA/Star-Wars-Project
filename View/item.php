@@ -7,15 +7,23 @@
 <div class="infos">
     <div>
         <?php
-        foreach($infos as $info){
-            if(!is_array($info)) {
-                echo $info . '<br>';
+        for($i = 0; $i < sizeof($infos); $i++){
+            echo '<b>' . $arrayKeys[$i] . ' : </b>';
+            if(empty($infos[$i])){
+                echo 'None <br>';
             } else {
-                foreach($info as $arrayInfo){
-                    echo $arrayInfo . '<br>';
+                if(is_array($infos[$i])){
+                    for($j = 0; $j < sizeof($infos[$i]); $j++){
+                        echo '<li>' . $infos[$i][$j] . '</li>';
+                    }
+                } else {
+                    echo $infos[$i] . '<br>';
                 }
             }
+
         }
         ?>
     </div>
 </div>
+<br>
+<a href="index.php/page=home?category=<?= $category ?>&choice=Rechercher">RETOUR</a>

@@ -11,17 +11,17 @@ class Common extends API_Info
      * @param $name
      * @param $films
      */
-    public function __construct($name, $films, $url, $created, $edited)
+    public function __construct($data)
     {
-        $this->name = $name;
-        $this->films = $films;
-        parent::__construct($url, $created, $edited);
+        $this->name = $data["name"];
+        $this->films = $data["films"];
+        parent::__construct($data);
     }
 
     /**
      * @return mixed
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
@@ -29,7 +29,7 @@ class Common extends API_Info
     /**
      * @return mixed
      */
-    public function getFilms()
+    public function get_films()
     {
         return $this->films;
     }

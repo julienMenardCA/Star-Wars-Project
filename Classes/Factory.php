@@ -11,9 +11,6 @@ class Factory
         // On récupère le tableau contenu dans le fichier Config/config.php
         $Config = include("Config/config.php");
 
-        dump($data["results"][0]);
-        dump($Config);
-
         // Tableau servant à contenir tous les types ayant une correspondence avec le type de l'élément récupéré via l'API
         $types = [];
 
@@ -62,7 +59,5 @@ class Factory
                 }
             }
         }
-
-        dump($types);
     }
 }

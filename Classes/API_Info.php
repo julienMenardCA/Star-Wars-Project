@@ -9,21 +9,19 @@ class API_Info
 
     /**
      * API_Info constructor.
-     * @param $url
-     * @param $created
-     * @param $edited
+     * @param $data
      */
-    public function __construct($url, $created, $edited)
+    public function __construct($data)
     {
-        $this->url = $url;
-        $this->created = $created;
-        $this->edited = $edited;
+        $this->url = $data["url"];
+        $this->created = $data["created"];
+        $this->edited = $data["edited"];
     }
 
     /**
      * @return mixed
      */
-    public function getUrl()
+    public function get_url()
     {
         return $this->url;
     }
@@ -31,7 +29,7 @@ class API_Info
     /**
      * @return mixed
      */
-    public function getCreated()
+    public function get_created()
     {
         return $this->created;
     }
@@ -39,7 +37,7 @@ class API_Info
     /**
      * @return mixed
      */
-    public function getEdited()
+    public function get_edited()
     {
         return $this->edited;
     }
