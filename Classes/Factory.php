@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Cette classe est censé prendre le json récupéré de l'API pour créer un objet de type dynamique, mais nous n'avons pu
+ * la terminer et elle est donc inutilisée sauf pour un appel dans la classe Controller
+ */
 class Factory
 {
 

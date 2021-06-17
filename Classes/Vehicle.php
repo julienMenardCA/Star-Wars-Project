@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Classe des véhicules
+ */
 class Vehicle extends Common
 {
     protected $model;
@@ -18,10 +20,12 @@ class Vehicle extends Common
     /**
      * Vehicle constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
         $this->model = $data["model"];
+        //Pour éviter d'avoir une erreur lorsque que l'on demande les vaisseaux vu qu'elle hérite de cette classe vehicle
         if (array_key_exists("vehicle_class", $data))
         {
             $this->vehicle_class = $data["vehicle_class"];
@@ -36,6 +40,7 @@ class Vehicle extends Common
         $this->pilots = $data["pilots"];
         $this->length = $data["length"];
         parent::__construct($data);
+        // Appel du constructeur de la classe parente
     }
 
     /**

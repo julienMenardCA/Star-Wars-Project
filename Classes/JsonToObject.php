@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Classe pour passer le json de l'API en objet
+ */
 class JsonToObject
 {
     private $jsonArray;
@@ -9,7 +11,9 @@ class JsonToObject
     /**
      * JsonToObject constructor.
      * @param $jsonArray
+     * Le json récupéré de l'API
      * @param $category
+     * La catégorie
      */
     public function __construct($jsonArray, $category)
     {
@@ -19,6 +23,7 @@ class JsonToObject
 
     public function convertToObject()
     {
+        // Dépendant de la catégorie, appel la classe qu'il faut
         switch ($this->category)
         {
             case "films":

@@ -15,6 +15,7 @@ class Planet extends Common
     /**
      * Planet constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
@@ -27,6 +28,7 @@ class Planet extends Common
         $this->terrain = $data["terrain"];
         $this->surfaceWater = $data["surface_water"];
         $this->residents = $data["residents"];
+        // Appel du constructeur de la classe parente
         parent::__construct($data);
     }
 

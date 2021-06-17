@@ -2,6 +2,7 @@
 
 class Manager
 {
+    //Cette fonction permet de récupérer le json de l'API
     public function getAPI($category, $currentPage){
 
         $url = "";
@@ -18,6 +19,7 @@ class Manager
         return $this->setCurl($url);
     }
 
+    //Cette fonction vient récupérer les infos de l'item
     public function getInfosOfItem($category,$id){
 
         $url = API_URL  . $category . '/' . $id . '/';
@@ -25,6 +27,7 @@ class Manager
         return $this->setCurl($url);
     }
 
+    //Cette fonction récupère le nom où le titre de l'item selon son URL
     public function getNameOrTitleByUrl($url){
 
         $url = substr_replace($url, 's', 4, 0);
@@ -38,6 +41,7 @@ class Manager
         }
     }
 
+    //Cette fonction intialise les options de la fonction curl
     private function setCurl($url){
 
         $curl = curl_init();

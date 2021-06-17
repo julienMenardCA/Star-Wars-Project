@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class pour les personnages
+ */
 class People extends Common
 {
     protected $birthYear;
@@ -17,6 +20,7 @@ class People extends Common
     /**
      * People constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
@@ -31,6 +35,7 @@ class People extends Common
         $this->species = $data["species"];
         $this->starships = $data["starships"];
         $this->vehicles = $data["vehicles"];
+        // Appel du constructeur de la classe parente
         parent::__construct($data);
     }
 

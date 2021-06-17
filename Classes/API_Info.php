@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Classe parente de toutes les autres classes
+ * Sert pour les donner que l'on trouve partout
+ */
 class API_Info
 {
     protected $url;
@@ -10,6 +13,7 @@ class API_Info
     /**
      * API_Info constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {

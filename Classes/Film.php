@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Classe pour les films
+ * Hérite d'API_Info
+ */
 class Film extends API_Info
 {
     protected $title;
@@ -17,6 +21,7 @@ class Film extends API_Info
     /**
      * Film constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
@@ -31,6 +36,7 @@ class Film extends API_Info
         $this->vehicles = $data["vehicles"];
         $this->characters = $data["characters"];
         $this->planets = $data["planets"];
+        // Appel du constructeur de la classe parente
         parent::__construct($data);
     }
 

@@ -1,5 +1,5 @@
 <?php
-
+// Le tableau de données pour la classe Factory
 return array(
     'API_Info' => array('url', 'created', 'edited'),
     'Common' => array('name', 'films'),

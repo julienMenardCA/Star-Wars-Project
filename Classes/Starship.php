@@ -9,13 +9,14 @@ class Starship extends Vehicle
     /**
      * Starship constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
         $this->MGLT = $data["MGLT"];
         $this->hyperdriveRating = $data["hyperdrive_rating"];
         $this->starshipClass = $data["starship_class"];
-
+        // Appel du constructeur de la classe parente
         parent::__construct($data);
     }
 

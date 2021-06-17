@@ -1,6 +1,10 @@
 <?php
 
-
+/**
+ * Classe parente à toutes les classes sauf Film
+ * Sert pour les données communes à ces classes
+ * Hérite de API_Info
+ */
 class Common extends API_Info
 {
     protected $name;
@@ -8,13 +12,14 @@ class Common extends API_Info
 
     /**
      * Common constructor.
-     * @param $name
-     * @param $films
+     * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
         $this->name = $data["name"];
         $this->films = $data["films"];
+        // Appel du constructeur de la classe parente
         parent::__construct($data);
     }
 

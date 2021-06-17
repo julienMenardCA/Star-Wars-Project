@@ -16,6 +16,7 @@ class Species extends Common
     /**
      * Species constructor.
      * @param $data
+     * Le json récupéré de l'API
      */
     public function __construct($data)
     {
@@ -29,6 +30,7 @@ class Species extends Common
         $this->language = $data["language"];
         $this->homeWorld = $data["homeworld"];
         $this->people = $data["people"];
+        // Appel du constructeur de la classe parente
         parent::__construct($data);
     }
 
