@@ -10,6 +10,6 @@ $controller = new Controller();
 
 if(!isset($_GET['where']) || ($_GET['where'] == 'home')) {
     $controller->home();
-}elseif($_GET['where'] == 'item') {
+} elseif($_GET['where'] == 'item') {
     $controller->item();
 }

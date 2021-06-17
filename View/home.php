@@ -4,7 +4,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhipwallpaper.com%2Fstar-wars-backgrounds%2F&psig=AOvVaw3f9xZY-qLUBdsAk7dXqnq3&ust=1622124153843000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOD_xcTB5_ACFQAAAAAdAAAAABAE">
+
     <form method="get">
         <label>
             <select name="category">
@@ -24,27 +24,28 @@
 
         if($_GET['category'] !== 'films') {
             for($i = 0; $i < sizeof($result); $i++){ ?>
-                <a href="index.php?where=item&category=<?= $category ?>&id=<?= $id[$i] ?>"><?= $result[$i]->getName() ?></a><br>
+                <a href="index.php?where=item&category=<?= $category ?>&id=<?= $id[$i] ?>"><?= $result[$i]->get_name() ?></a><br>
                 <?php
             }
         } else {
             for ($i = 0; $i < sizeof($result); $i++) { ?>
-                <a href="index.php?where=item&category=<?= $category ?>&id=<?= $id[$i] ?>"><?= $result[$i]->getTitle() ?></a><br>
+                <a href="index.php?where=item&category=<?= $category ?>&id=<?= $id[$i] ?>"><?= $result[$i]->get_title() ?></a><br>
                 <?php
             }
         }
+        echo '<br>';
 
         if(!isset($_GET['page']) || $_GET['page'] == 1){ ?>
-            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . '2' ?>">Page suivante</a>
+            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . '2' ?>">Page suivante<img style="width: 0.8vw" src="https://image.flaticon.com/icons/png/512/271/271228.png"></a>
         <?php
         }
         else if($_GET['page'] == $numberOfPages)
         { ?>
-            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . ($_GET['page'] - 1) ?>">Page précédente</a>
+            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . ($_GET['page'] - 1) ?>"><img style="width: 0.8vw" src="https://image.flaticon.com/icons/png/512/32/32542.png">Page précédente</a>
         <?php
         } else { ?>
-            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . ($_GET['page'] - 1) ?>">Page précédente</a>
-            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . ($_GET['page'] + 1) ?>">Page suivante</a>
+            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . ($_GET['page'] - 1) ?>"><img style="width: 0.8vw" src="https://image.flaticon.com/icons/png/512/32/32542.png">Page précédente</a>
+            <a href="<?= '?' . $_SERVER['QUERY_STRING'] . '&page=' . ($_GET['page'] + 1) ?>">Page suivante<img style="width: 0.8vw" src="https://image.flaticon.com/icons/png/512/271/271228.png"></a>
         <?php
         }
     }

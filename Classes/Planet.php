@@ -14,34 +14,26 @@ class Planet extends Common
 
     /**
      * Planet constructor.
-     * @param $diameter
-     * @param $rotationPeriod
-     * @param $orbitalPeriod
-     * @param $gravity
-     * @param $population
-     * @param $climate
-     * @param $terrain
-     * @param $surfaceWater
-     * @param $residents
+     * @param $data
      */
-    public function __construct($diameter, $rotationPeriod, $orbitalPeriod, $gravity, $population, $climate, $terrain, $surfaceWater, $residents, $name, $films, $url, $created, $edited)
+    public function __construct($data)
     {
-        $this->diameter = $diameter;
-        $this->rotationPeriod = $rotationPeriod;
-        $this->orbitalPeriod = $orbitalPeriod;
-        $this->gravity = $gravity;
-        $this->population = $population;
-        $this->climate = $climate;
-        $this->terrain = $terrain;
-        $this->surfaceWater = $surfaceWater;
-        $this->residents = $residents;
-        parent::__construct($name, $films, $url, $created, $edited);
+        $this->diameter = $data["diameter"];
+        $this->rotationPeriod = $data["rotation_period"];
+        $this->orbitalPeriod = $data["orbital_period"];
+        $this->gravity = $data["gravity"];
+        $this->population = $data["population"];
+        $this->climate = $data["climate"];
+        $this->terrain = $data["terrain"];
+        $this->surfaceWater = $data["surface_water"];
+        $this->residents = $data["residents"];
+        parent::__construct($data);
     }
 
     /**
      * @return mixed
      */
-    public function getDiameter()
+    public function get_diameter()
     {
         return $this->diameter;
     }
@@ -49,7 +41,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getRotationPeriod()
+    public function get_rotation_period()
     {
         return $this->rotationPeriod;
     }
@@ -57,7 +49,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getOrbitalPeriod()
+    public function get_orbital_period()
     {
         return $this->orbitalPeriod;
     }
@@ -65,7 +57,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getGravity()
+    public function get_gravity()
     {
         return $this->gravity;
     }
@@ -73,7 +65,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getPopulation()
+    public function get_population()
     {
         return $this->population;
     }
@@ -81,7 +73,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getClimate()
+    public function get_climate()
     {
         return $this->climate;
     }
@@ -89,7 +81,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getTerrain()
+    public function get_terrain()
     {
         return $this->terrain;
     }
@@ -97,7 +89,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getSurfaceWater()
+    public function get_surface_water()
     {
         return $this->surfaceWater;
     }
@@ -105,7 +97,7 @@ class Planet extends Common
     /**
      * @return mixed
      */
-    public function getResidents()
+    public function get_residents()
     {
         return $this->residents;
     }

@@ -19,6 +19,8 @@ class Controller
 
             $result = $manager->getAPI($category, $currentPage);
 
+            $factory = new Factory($result);
+
             foreach($result['results'] as $item){
                 $urls[] = $item['url'];
             }
@@ -54,69 +56,34 @@ class Controller
         $category = $_GET['category'];
         $id = $_GET['id'];
 
-        $infos = $manager->getInfosOfItem($category, $id);
+        $item = $manager->getInfosOfItem($category, $id);
 
-        //TODO conversion
-        $jsonToObject =  new JsonToObject($infos, $category);
+        $jsonToObject =  new JsonToObject($item, $category);
         $convertedObject = $jsonToObject->convertToObject();
-        dump($convertedObject);
 
-        if (isset($infos['homeworld'])){
-            $infos['homeworld']  = $manager->getNameOrTitleByUrl($infos['homeworld']);
-        }
+        $arrOfMethods = get_class_methods($convertedObject);
 
-        if (isset($infos['films'])){
-            for($i = 0; $i < sizeof($infos['films']); $i++) {
-                $infos['films'][$i] = $manager->getNameOrTitleByUrl($infos['films'][$i]);
-            }
+        $infos = [];
+        $arrayKeys = array_keys($item);
+        for($i = 0; $i < sizeof($arrayKeys); $i++)
+        {
+            $methodName = 'get_' . $arrayKeys[$i];
+            $infos[] = $convertedObject->$methodName();
         }
-        if (isset($infos['species'])){
-            for($i = 0; $i < sizeof($infos['species']); $i++) {
-                $infos['species'][$i] = $manager->getNameOrTitleByUrl($infos['species'][$i]);
-            }
-        }
-        if (isset($infos['vehicles'])){
-            for($i = 0; $i < sizeof($infos['vehicles']); $i++) {
-                $infos['vehicles'][$i] = $manager->getNameOrTitleByUrl($infos['vehicles'][$i]);
-            }
-        }
-        if (isset($infos['starships'])){
-            for($i = 0; $i < sizeof($infos['starships']); $i++) {
-                $infos['starships'][$i] = $manager->getNameOrTitleByUrl($infos['starships'][$i]);
-            }
-        }
-        if (isset($infos['characters'])){
-            for($i = 0; $i < sizeof($infos['characters']); $i++) {
-                $infos['characters'][$i] = $manager->getNameOrTitleByUrl($infos['characters'][$i]);
-            }
-        }
-        if (isset($infos['planets'])){
-            for($i = 0; $i < sizeof($infos['planets']); $i++) {
-                $infos['planets'][$i] = $manager->getNameOrTitleByUrl($infos['planets'][$i]);
-            }
-        }
-        if (isset($infos['residents'])){
-            for($i = 0; $i < sizeof($infos['residents']); $i++) {
-                $infos['residents'][$i] = $manager->getNameOrTitleByUrl($infos['residents'][$i]);
-            }
-        }
-        if (isset($infos['people'])){
-            for($i = 0; $i < sizeof($infos['people']); $i++) {
-                $infos['people'][$i] = $manager->getNameOrTitleByUrl($infos['people'][$i]);
-            }
-        }
-        if (isset($infos['pilots'])){
-            for($i = 0; $i < sizeof($infos['pilots']); $i++) {
-                $infos['pilots'][$i] = $manager->getNameOrTitleByUrl($infos['pilots'][$i]);
-            }
-        }
-
 
         for($i = 0; $i < 3; $i++) {
             array_pop($infos);
         }
 
-        dump($infos);
+        for($i = 0; $i < sizeof($infos); $i++){
+            if(is_array($infos[$i])){
+                for($j = 0; $j < sizeof($infos[$i]); $j++){
+                    $infos[$i][$j] = $manager->getNameOrTitleByUrl($infos[$i][$j]);
+                }
+            } elseif(str_contains($infos[$i], 'swapi.dev')) {
+                $infos[$i] = $manager->getNameOrTitleByUrl($infos[$i]);
+            }
+        }
 
         include('View/item.php');
     }

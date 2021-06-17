@@ -16,38 +16,28 @@ class People extends Common
 
     /**
      * People constructor.
-     * @param $birthYear
-     * @param $eyeColor
-     * @param $gender
-     * @param $hairColor
-     * @param $height
-     * @param $mass
-     * @param $skinColor
-     * @param $homeWorld
-     * @param $species
-     * @param $starships
-     * @param $vehicles
+     * @param $data
      */
-    public function __construct($birthYear, $eyeColor, $gender, $hairColor, $height, $mass, $skinColor, $homeWorld, $species, $starships, $vehicles, $name, $films, $url, $created, $edited)
+    public function __construct($data)
     {
-        $this->birthYear = $birthYear;
-        $this->eyeColor = $eyeColor;
-        $this->gender = $gender;
-        $this->hairColor = $hairColor;
-        $this->height = $height;
-        $this->mass = $mass;
-        $this->skinColor = $skinColor;
-        $this->homeWorld = $homeWorld;
-        $this->species = $species;
-        $this->starships = $starships;
-        $this->vehicles = $vehicles;
-        parent::__construct($name, $films, $url, $created, $edited);
+        $this->birthYear = $data["birth_year"];
+        $this->eyeColor = $data["eye_color"];
+        $this->gender = $data["gender"];
+        $this->hairColor = $data["hair_color"];
+        $this->height = $data["height"];
+        $this->mass = $data["mass"];
+        $this->skinColor = $data["skin_color"];
+        $this->homeWorld = $data["homeworld"];
+        $this->species = $data["species"];
+        $this->starships = $data["starships"];
+        $this->vehicles = $data["vehicles"];
+        parent::__construct($data);
     }
 
     /**
      * @return mixed
      */
-    public function getBirthYear()
+    public function get_birth_year()
     {
         return $this->birthYear;
     }
@@ -55,7 +45,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getEyeColor()
+    public function get_eye_Color()
     {
         return $this->eyeColor;
     }
@@ -63,7 +53,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getGender()
+    public function get_gender()
     {
         return $this->gender;
     }
@@ -71,7 +61,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getHairColor()
+    public function get_hair_color()
     {
         return $this->hairColor;
     }
@@ -79,7 +69,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getHeight()
+    public function get_height()
     {
         return $this->height;
     }
@@ -87,7 +77,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getMass()
+    public function get_mass()
     {
         return $this->mass;
     }
@@ -95,7 +85,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getSkinColor()
+    public function get_skin_color()
     {
         return $this->skinColor;
     }
@@ -103,7 +93,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getHomeWorld()
+    public function get_homeworld()
     {
         return $this->homeWorld;
     }
@@ -111,7 +101,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getSpecies()
+    public function get_species()
     {
         return $this->species;
     }
@@ -119,7 +109,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getStarships()
+    public function get_starships()
     {
         return $this->starships;
     }
@@ -127,7 +117,7 @@ class People extends Common
     /**
      * @return mixed
      */
-    public function getVehicles()
+    public function get_vehicles()
     {
         return $this->vehicles;
     }

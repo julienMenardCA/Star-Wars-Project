@@ -7,20 +7,19 @@ class Starship extends Vehicle
 
     /**
      * Starship constructor.
-     * @param $length
-     * @param $MGLT
+     * @param $data
      */
-    public function __construct($length, $MGLT, $model, $class, $manufacturer, $costInCredits, $crew, $passengers, $maxAtmospheringSpeed, $cargoCapacity, $consumables, $pilots, $name, $films, $url, $created, $edited)
+    public function __construct($data)
     {
-        $this->length = $length;
-        $this->MGLT = $MGLT;
-        parent::__construct($model, $class, $manufacturer, $costInCredits, $crew, $passengers, $maxAtmospheringSpeed, $cargoCapacity, $consumables, $pilots, $name, $films, $url, $created, $edited);
+        $this->length = $data["length"];
+        $this->MGLT = $data["MGLT"];
+        parent::__construct($data);
     }
 
     /**
      * @return mixed
      */
-    public function getLength()
+    public function get_length()
     {
         return $this->length;
     }
@@ -28,7 +27,7 @@ class Starship extends Vehicle
     /**
      * @return mixed
      */
-    public function getMGLT()
+    public function get_MGLT()
     {
         return $this->MGLT;
     }

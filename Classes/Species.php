@@ -15,37 +15,28 @@ class Species extends Common
 
     /**
      * Species constructor.
-     * @param $classification
-     * @param $designation
-     * @param $averageHeight
-     * @param $averageLifespan
-     * @param $eyeColors
-     * @param $hairColors
-     * @param $skinColors
-     * @param $language
-     * @param $homeWorld
-     * @param $people
+     * @param $data
      */
-    public function __construct($classification, $designation, $averageHeight, $averageLifespan, $eyeColors, $hairColors, $skinColors, $language, $homeWorld, $people, $name, $films, $url, $created, $edited)
+    public function __construct($data)
     {
-        $this->classification = $classification;
-        $this->designation = $designation;
-        $this->averageHeight = $averageHeight;
-        $this->averageLifespan = $averageLifespan;
-        $this->eyeColors = $eyeColors;
-        $this->hairColors = $hairColors;
-        $this->skinColors = $skinColors;
-        $this->language = $language;
-        $this->homeWorld = $homeWorld;
-        $this->people = $people;
-        parent::__construct($name, $films, $url, $created, $edited);
+        $this->classification = $data["classification"];
+        $this->designation = $data["designation"];
+        $this->averageHeight = $data["average_height"];
+        $this->averageLifespan = $data["average_lifespan"];
+        $this->eyeColors = $data["eye_colors"];
+        $this->hairColors = $data["hair_colors"];
+        $this->skinColors = $data["skin_colors"];
+        $this->language = $data["language"];
+        $this->homeWorld = $data["homeworld"];
+        $this->people = $data["people"];
+        parent::__construct($data);
     }
 
     /**
      * @return mixed
      */
 
-    public function getClassification()
+    public function get_classification()
     {
         return $this->classification;
     }
@@ -53,7 +44,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getDesignation()
+    public function get_designation()
     {
         return $this->designation;
     }
@@ -61,7 +52,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getAverageHeight()
+    public function get_average_height()
     {
         return $this->averageHeight;
     }
@@ -69,7 +60,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getAverageLifespan()
+    public function get_average_lifespan()
     {
         return $this->averageLifespan;
     }
@@ -77,7 +68,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getEyeColors()
+    public function get_eye_colors()
     {
         return $this->eyeColors;
     }
@@ -85,7 +76,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getHairColors()
+    public function get_hair_colors()
     {
         return $this->hairColors;
     }
@@ -93,7 +84,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getSkinColors()
+    public function get_skin_colors()
     {
         return $this->skinColors;
     }
@@ -101,7 +92,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getLanguage()
+    public function get_language()
     {
         return $this->language;
     }
@@ -109,7 +100,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getHomeWorld()
+    public function get_homeworld()
     {
         return $this->homeWorld;
     }
@@ -117,7 +108,7 @@ class Species extends Common
     /**
      * @return mixed
      */
-    public function getPeople()
+    public function get_people()
     {
         return $this->people;
     }
